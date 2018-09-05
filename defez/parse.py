@@ -27,3 +27,18 @@ def parse_udlr(sample_path):
                 token = rows[row_idx][col_idx].strip()
                 if token:
                     yield token
+
+
+def parse_udrl(sample_path):
+    """ Up to down then right to left
+    """
+    with open(sample_path) as file_handler:
+        reader = csv.reader(file_handler)
+        rows = list(reader)
+        row_width = len(rows[0])
+        n_rows = len(rows)
+        for col_idx in range(row_width):
+            for row_idx in list(range(n_rows))[::-1]:
+                token = rows[row_idx][col_idx].strip()
+                if token:
+                    yield token
