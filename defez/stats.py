@@ -19,7 +19,7 @@ def first_order(token_generators):
             counts[token] += 1
             total_count += 1
 
-    return {tok: count / total_count for tok, count in counts}
+    return {tok: count / total_count for tok, count in counts.items()}
 
 def second_order(token_generators):
     """ Computes first order stats, token frequencies
@@ -40,4 +40,4 @@ def second_order(token_generators):
                 total_count += 1
             last_token = token
 
-    return {tok: count / total_count for tok, count in counts}
+    return {tok: count / total_count for tok, count in counts.items()}
