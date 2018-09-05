@@ -22,8 +22,8 @@ def parse_udlr(sample_path):
         rows = list(reader)
         row_width = len(rows[0])
         n_rows = len(rows)
-        for row_idx in range(n_rows):
-            for col_idx in range(row_width):
+        for col_idx in range(row_width):
+            for row_idx in range(n_rows):
                 token = rows[row_idx][col_idx].strip()
                 if token:
                     yield token
