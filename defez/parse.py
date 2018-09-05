@@ -10,7 +10,7 @@ def parse_lrud(sample_path):
         reader = csv.reader(file_handler)
         for row in reader:
             for token in row:
-                yield token.strip().replace('', '___')
+                yield token.strip()
 
 def parse_udlr(sample_path):
     """ Up to down then left to right
@@ -22,4 +22,4 @@ def parse_udlr(sample_path):
         n_rows = len(rows)
         for row_idx in range(n_rows):
             for col_idx in range(row_width):
-                yield rows[row_idx][col_idx].strip().replace('', '___')
+                yield rows[row_idx][col_idx].strip()
